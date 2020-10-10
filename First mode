@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int x, z;
+long long int y;
+int main()
+{
+	srand(time(NULL));
+
+	x = rand() % 1000 + 1;
+
+
+	cout << "try to guess the number:";
+	cin >> y;
+
+	while (y < x)
+	{
+		cout << "the hidden number is greater" << endl;
+		z++;
+		cout << "Try again:";
+		cin >> y;
+	}
+	while (y > x)
+	{
+		cout << "the hidden number is smaller" << endl;
+		z++;
+		cout << "Try again:";
+		cin >> y;
+	}
+	if (y == x)
+	{
+		cout << "It is right!" << endl;
+		z++;
+		cout << "number of attempts:" << z << endl;
+	}
+	system("pause");
+	return 0;
+}
